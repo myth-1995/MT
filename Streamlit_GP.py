@@ -4,7 +4,8 @@ from psimpy.simulator import MassPointModel
 import linecache
 import pickle
 
-file_path = "scalar_gasp_Xend.pkl"
+file_path = "data/scalar_gasp_Xend.pkl"
+elevation_path = "data/synthetic_topo.asc"
 
 # Open the file in binary read mode
 with open(file_path, 'rb') as file:
@@ -12,7 +13,7 @@ with open(file_path, 'rb') as file:
     ScalarGaSP_Xend = pickle.load(file)
 
 # Load elevation data
-elevation_path = 'C:\\Users\\vmith\\Downloads\\Psimpy_trials\\Trial_I\\tests\\data\\synthetic_topo.asc'
+
 header = [linecache.getline(elevation_path, i) for i in range(1, 6)]
 header_values = [float(h.split()[-1].strip()) for h in header]
 ncols, nrows, xll, yll, cellsize = header_values
