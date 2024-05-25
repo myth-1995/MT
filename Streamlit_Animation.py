@@ -3,7 +3,7 @@ import base64
 import os
 
 # Constants
-gif_directory = "animations_score"
+gif_directory = "animations_score_mit_Improvements"
 mu_values = [0.01, 0.02, 0.04, 0.06, 0.08, 0.12, 0.16, 0.24, 0.32, 0.48]
 xi_values = [100, 200, 400, 600, 800, 1200, 1600, 1800, 2000, 2200]
 
@@ -22,14 +22,14 @@ def load_gif(filepath):
         return None
 
 # Title for the animation
-st.title("Landslide Simulation Animation")
+st.title("Idealized Landslide Simulation")
 
 # Dropdown widgets for mu and xi
-mu_dropdown = st.selectbox("Select μ:", options=mu_values, index=mu_values.index(initial_mu))
-xi_dropdown = st.selectbox("Select ξ:", options=xi_values, index=xi_values.index(initial_xi))
+mu_dropdown = st.selectbox("Select Colomb friction :", options=mu_values, index=mu_values.index(initial_mu))
+xi_dropdown = st.selectbox("Select Turbulent Friction :", options=xi_values, index=xi_values.index(initial_xi))
 
 # Construct filename based on selected mu and xi values
-filename = f'animation_mu_{mu_dropdown}_xi_{xi_dropdown}.gif'
+filename = f'speed_up_30_animation_mu_{mu_dropdown}_xi_{xi_dropdown}.gif'
 filepath = os.path.join(gif_directory, filename)
 
 # Display the animation if it exists, otherwise show a message

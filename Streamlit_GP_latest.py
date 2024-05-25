@@ -47,7 +47,7 @@ def calculate_final_position(mu_slider, xi_slider):
     return x_fin, z_fin
 
 # Define layout
-st.title("Mass Point Model Visualization")
+st.title("Idealized Landslide Simulation")
 st.sidebar.title("Parameters")
 mu_slider = st.sidebar.slider("Coulomb Friction", min_value=0.0, max_value=1.0, step=0.01, value=mu_init)
 xi_slider = st.sidebar.slider("Turbulent Friction", min_value=0, max_value=2000, step=100, value=xi_init)
@@ -89,6 +89,6 @@ ax.set_xlabel('x')
 ax.set_ylabel('z')
 ax.set_xlim(0, 5000)  # Set fixed x-axis limits
 ax.set_ylim(-25, 1400)  # Set fixed y-axis limits, adjust based on your data range
-ax.set_title('Cross Section at Any y')
+ax.set_title('Mountain Slope Cut-Through')
 
 st.pyplot(fig)
